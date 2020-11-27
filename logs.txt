@@ -1,0 +1,7 @@
+26-11-2020 23:55:35 -> Get users | status[200]
+26-11-2020 23:55:35 -> Get user No.123 | status[200]
+26-11-2020 23:55:35 -> Get 1 users from Israel | status[200]
+26-11-2020 23:55:35 -> Get list of last 4 logs | status[200]
+26-11-2020 23:55:35 -> New user No.1001 created | status[200]
+26-11-2020 23:55:35 -> User No.121 updated | status[200]
+26-11-2020 23:55:35 -> Delete user No.123 | status[200]
