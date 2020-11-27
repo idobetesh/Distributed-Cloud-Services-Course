@@ -22,7 +22,7 @@ app.get('/users', (req, res) => {
     res.send(responseUsers);
 });
 
-app.get('/users/:id', (req, res, next) => {
+app.get('/users/:id', (req, res) => {
     let responseUser;
     const { params: { id }} = req;
     let isError = false;
