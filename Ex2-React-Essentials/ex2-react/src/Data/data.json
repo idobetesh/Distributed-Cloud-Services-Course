@@ -1,0 +1,17 @@
+[
+    {
+        "date": "01.01.2021",
+        "name": "John Doe",
+        "city": "Tel Aviv"
+    },
+    {
+        "date": "05.01.2021",
+        "name": "John Doe",
+        "city": "Ra'anana"
+    },
+    {
+        "date": "06.01.2021",
+        "name": "John Doe",
+        "city": "Ramat-Gan"
+    }
+]
