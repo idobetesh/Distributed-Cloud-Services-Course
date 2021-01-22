@@ -1,17 +1,26 @@
 [
     {
+        "id": 1,
         "date": "01.01.2021",
-        "name": "John Doe",
-        "city": "Tel Aviv"
+        "name": "Paul Simon",
+        "location": "New York"
     },
     {
+        "id": 2,
         "date": "05.01.2021",
-        "name": "John Doe",
-        "city": "Ra'anana"
+        "name": "Mark Knopfler",
+        "location": "California"
     },
     {
+        "id": 3,
         "date": "06.01.2021",
-        "name": "John Doe",
-        "city": "Ramat-Gan"
+        "name": "Julian Lage",
+        "location": "Chicago"
+    },
+    {
+        "id": 4,
+        "date": "06.01.2021",
+        "name": "Stevie Wonder",
+        "location": "Denver"
     }
 ]
