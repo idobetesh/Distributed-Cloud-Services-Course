@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 // import Background from './Background';
 // import Truck from './Truck';
 import ClientsData from '../Data/clientsData.json';
@@ -50,15 +50,14 @@ class ClientsList extends Component {
     }
 
     update(newClient, id) {
-        this.setState(prevState => ({
-                edit: false,
-                clientsData: prevState.clientsData.map( client => {
+        this.setState(prevState => ({ edit: false, clientsData: prevState.clientsData.map( client => {
                         if (client.id === id) {
                             client.name = newClient.name
                             client.location = newClient.location
                             client.date = newClient.date
                         }
-                        return client })
+                        return client 
+                    })
             }
         ))
     }
