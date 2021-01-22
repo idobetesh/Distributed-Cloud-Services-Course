@@ -34,18 +34,6 @@ class Registration extends Component{
         this.setState({ [name]: val })
     }
 
-    /* is invoked immediately after updating occurs. 
-    This method is not called for the initial render. */
-    componentDidUpdate(prevProps) {
-        if (this.props.formInputs !== prevProps.formInputs) {
-            this.setState({
-                name: this.props.formInputs.name,
-                location: this.props.formInputs.location,
-                date: this.props.formInputs.date,
-            })
-        }
-    }
-    
     save(e) {
         e.preventDefault()
         if ( this.state.date === '' || this.state.name === '' || this.state.location === '') {
