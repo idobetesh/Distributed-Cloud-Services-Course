@@ -10,7 +10,6 @@ class Background extends Component {
                     <img src={truck} style={{display: 'block', position: 'absolute', height: '40%', top: 450}} alt="truck"/>
                 </div>
         )
-              
     }
 }
 
