@@ -1,24 +1,16 @@
-import React, { Component} from 'react';
+import React, {Component} from 'react';
 import background from '../Images/background.png';
 import truck from '../Images/truck.png';
 
-const bgStyle = {
-    backgroundRepeat: 'no-repeat',
-    height: '584.2475559923341px',
-}
-
-const truckStyle = {
-    left: '0%',
-    right: '49.44%',
-    top: '65.38%',
-    bottom: '0.04%',
-}
 class Background extends Component {
     render() {
-        return  <>
-                <img src={background} style={bgStyle} alt="background"/>
-                <img src={truck} style={truckStyle} alt="truck"/>
-                </>
+        return (
+                <div style={{marginLeft: '15%'}}>
+                    <img src={background} style={{display: 'block' ,position: 'absolute', height: '80%'}} alt="background"/>
+                    <img src={truck} style={{display: 'block', position: 'absolute', height: '40%', top: 450}} alt="truck"/>
+                </div>
+        )
+              
     }
 }
 

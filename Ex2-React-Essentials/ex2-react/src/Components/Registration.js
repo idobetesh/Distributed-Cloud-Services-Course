@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import { Button } from '@material-ui/core';
+import React, {Component} from 'react';
+import {Button} from '@material-ui/core';
 
 const formInput = {
     display: 'block',
     marginTop: '10px',
+    height: '28px',
+    width: '140%',
     justifyContent:'center', 
     alignItems:'center',
 }
-
-const registStyle = {
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-}
-
-class Registration extends Component{
+class Registration extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -27,13 +22,25 @@ class Registration extends Component{
         this.inputChanged = this.inputChanged.bind(this)
     }
 
+    /* is invoked immediately after updating occurs. 
+    This method is not called for the initial render. */
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.formInputs !== prevProps.formInputs) {
+            this.setState({
+                name: this.props.formInputs.name,
+                location: this.props.formInputs.location,
+                date: this.props.formInputs.date,
+            })
+        }
+    }
+
     inputChanged(e) {
         e.preventDefault();
         const name = e.target.name
         const val = e.target.value
         this.setState({ [name]: val })
     }
-
+    
     save(e) {
         e.preventDefault()
         if ( this.state.date === '' || this.state.name === '' || this.state.location === '') {
@@ -59,11 +66,11 @@ class Registration extends Component{
 
     render() {
         return (
-            <div style={registStyle}>
+            <div style={{marginLeft: '60%', marginTop: '-10%', display: 'block', position: 'absolute', zIndex: 0}}>
                 <input style={formInput} type={'date'} name={'date'} value={this.state.date} onChange={this.inputChanged}/>
                 <input style={formInput} type={'text'} name={'name'} value={this.state.name} onChange={this.inputChanged}/>
                 <input style={formInput} type={'text'} name={'location'} value={this.state.location} onChange={this.inputChanged}/>
-                <Button style={formInput} id={'save'} onClick={this.save} variant="contained" color="secondary">SAVE</Button>
+                <Button style={{width: '70%', marginTop: '10%', marginLeft: '37%'}} id={'save'} onClick={this.save} variant="contained" color="secondary">SAVE</Button>
             </div>  
         ) 
     }     

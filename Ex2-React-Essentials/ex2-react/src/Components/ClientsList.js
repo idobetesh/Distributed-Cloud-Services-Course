@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-// import Background from './Background';
-// import Truck from './Truck';
+import React, {Component} from 'react';
 import ClientsData from '../Data/clientsData.json';
 import Client from './Client';
 import Registration from './Registration'
@@ -14,7 +12,7 @@ class ClientsList extends Component {
             edit: false,
             formInputs: {
                 id: null,
-                date: "01.01.2021",
+                date: "2021-01-01",
                 name: 'John Doe',
                 location: 'Tel Aviv'
             },
@@ -25,10 +23,23 @@ class ClientsList extends Component {
         this.delete = this.delete.bind(this)
         this.add = this.add.bind(this)
         this.nextId = this.nextId.bind(this)
+        this.restoreLast = this.restoreLast.bind(this)
     }
 
     componentDidMount() {
         ClientsData.map(item => this.add({id: item.id, name: item.name, date: item.date, location: item.location}));
+    }
+
+    restoreLast(i) {
+        this.setState(prevState => ({
+            edit: true,
+            formInputs: {
+                id: prevState.clientsData[i]["id"],
+                date: prevState.clientsData[i]["date"],
+                name: prevState.clientsData[i]["name"],
+                location: prevState.clientsData[i]["location"]
+            }
+        }))
     }
 
     delete(id) {
@@ -69,12 +80,12 @@ class ClientsList extends Component {
 
     eachClient(item, index) {
         return (
-            <Client key={item.id} index={index} onDelete={this.delete}>
-                <div>
-                    <span style={{marginLeft: '25px'}}> {++index + "."} </span>
-                    <span style={{marginLeft: '25px'}}> {item.date} </span>
-                    <span style={{marginLeft: '25px'}}> {item.name} </span>
-                    <span style={{marginLeft: '25px'}}> {item.location} </span>
+            <Client key={item.id} index={index} onDelete={this.delete} onChange={this.restoreLast}>
+                <div style={{position: 'absolute', display: 'inline-block', zIndex: 0, marginTop:'5%', marginLeft:'20%',}}>
+                    <label style={{marginLeft: '20px'}}> {++index + "."} </label>
+                    <label style={{marginLeft: '20px'}}> {item.date} </label>
+                    <label style={{marginLeft: '20px'}}> {item.name} </label>
+                    <label style={{marginLeft: '20px'}}> {item.location} </label>
                 </div>
             </Client>
         )
@@ -84,12 +95,9 @@ class ClientsList extends Component {
         return (
             <>
                 <Background></Background>
-                <div style={{background:'grey', height: '60%'}}>
-                    <p>
+                <label>
                     {this.state.clientsData.map(this.eachClient)}
-                    </p>
-                </div>
-                {/* <Truck></Truck> */}
+                </label>
                 <Registration formInputs={this.state.formInputs} edit={this.state.edit} onAdd={this.add} onEdit={this.update}/>
             </>
         )

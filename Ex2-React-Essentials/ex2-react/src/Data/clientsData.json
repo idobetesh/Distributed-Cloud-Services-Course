@@ -1,25 +1,25 @@
 [
     {
         "id": 1,
-        "date": "01.01.2021",
+        "date": "2021-02-01",
         "name": "Paul Simon",
         "location": "New York"
     },
     {
         "id": 2,
-        "date": "05.01.2021",
+        "date": "2021-03-04",
         "name": "Mark Knopfler",
         "location": "California"
     },
     {
         "id": 3,
-        "date": "06.01.2021",
+        "date": "2021-08-03",
         "name": "Julian Lage",
         "location": "Chicago"
     },
     {
         "id": 4,
-        "date": "06.01.2021",
+        "date": "2021-05-11",
         "name": "Stevie Wonder",
         "location": "Denver"
     }
